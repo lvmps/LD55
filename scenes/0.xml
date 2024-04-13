@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<scene
+    depth="1"
+    desc=""
+    eventsnippetid="2"
+    extheight="816"
+    extwidth="816"
+    extx="-8"
+    exty="-8"
+    format="4.0.1"
+    gravx="-0.0"
+    gravy="0.0"
+    height="800"
+    id="0"
+    name="Test"
+    revision=""
+    savecount="0"
+    tiled="1"
+    tileh="8"
+    tilew="8"
+    type="standard"
+    width="800">
+    <layers>
+        <color-bg blue="255" green="255" red="255"/>
+        <layer
+            blendMode="normal"
+            color="100,168,234"
+            id="0"
+            locked="false"
+            name="X"
+            opacity="100"
+            order="0"
+            scrollFactorX="1.0"
+            scrollFactorY="1.0"
+            visible="true"/>
+    </layers>
+    <joints/>
+    <regions/>
+    <terrainRegions/>
+    <actors/>
+    <snippets/>
+    <terrain/>
+    <atlases members="" retainAtlases="true"/>
+</scene>
