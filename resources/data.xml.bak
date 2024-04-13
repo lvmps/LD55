@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pack>
+    <custom-block
+        blocktag="custom-0"
+        blocktype="NORMAL"
+        code="&quot;&quot; + sayToScene(&quot;Typing Input Behaviour&quot;, &quot;_customBlock_CBKEYCODEFIX&quot;, [, ])"
+        desc="checks keycode &#10;returns character"
+        global="false"
+        gui="check keycode %0 character %1"
+        id="0"
+        message="CBKEYCODEFIX"
+        name="CBKEYCODEFIX"
+        oid="-1"
+        return="text"
+        shared="false"
+        snippetID="1">
+        <blank name="keycode" order="0" type="number"/>
+        <blank name="character" order="1" type="text"/>
+    </custom-block>
+</pack>

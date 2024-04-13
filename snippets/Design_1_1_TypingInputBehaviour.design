@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups format="1">
+    <group eventID="1" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="1" id="-1"/>
+        </init>
+    </group>
+    <group eventID="2" id="0">
+        <event-key-any-press-release comment="false" x="15" y="15">
+            <group eventID="2" id="-1"/>
+            <int id="0" val="0"/>
+        </event-key-any-press-release>
+    </group>
+    <group eventID="3" id="0">
+        <receiver-1-0 comment="false" x="15" y="15">
+            <group eventID="3" id="-1">
+                <code-long comment="false" x="0" y="0">
+                    <int id="0" val="if (!isShiftDown())&#10;&#9;{&#10;&#9;&#9;/* key code: 65 -- 90 = a -- z */&#10;&#9;&#9;if ((__keycode &amp;gt;= 65 &amp;amp;&amp;amp; __keycode &amp;lt;= 90))&#10;&#9;&#9;{&#10;&#9;&#9;&#9;return __character;&#10;&#9;&#9;}&#10;        &#10;&#9;&#9;return &amp;quot;&amp;quot;;&#10;&#9;}&#10;&#9;else if (isShiftDown())&#10;&#9;{&#10;&#9;&#9;/* key code: 65 -- 90 = A -- Z */&#10;&#9;&#9;if ((__keycode &amp;gt;= 65 &amp;amp;&amp;amp; __keycode &amp;lt;= 90))&#10;&#9;&#9;{&#10;&#9;&#9;&#9;return __character;&#10;&#9;&#9;}&#10;        &#10;&#9;&#9;return &amp;quot;&amp;quot;;&#10;&#9;}&#10;    &#10;&#9;return &amp;quot;&amp;quot;;"/>
+                </code-long>
+            </group>
+        </receiver-1-0>
+    </group>
+</groups>

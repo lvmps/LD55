@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<groups format="1">
+    <group eventID="1" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <set-val-0-1 comment="false" x="0" y="0">
+                    <create-list comment="false" id="0" x="0" y="0"/>
+                </set-val-0-1>
+            </group>
+        </init>
+    </group>
+    <group eventID="2" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="2" id="-1">
+                <if comment="false" x="0" y="0">
+                    <group eventID="2" id="-1">
+                        <if comment="false" x="0" y="0">
+                            <group eventID="2" id="-1">
+                                <if comment="false" x="0" y="0">
+                                    <group eventID="2" id="-1">
+                                        <add-list comment="false" x="0" y="0">
+                                            <get-val-0-1 comment="false" id="0" x="0" y="0"/>
+                                            <int id="1" val="U"/>
+                                        </add-list>
+                                        <set-val-0-6 comment="false" x="0" y="0">
+                                            <true comment="false" id="0" x="0" y="0"/>
+                                        </set-val-0-6>
+                                    </group>
+                                    <keystate comment="false" id="0" x="0" y="0">
+                                        <int id="0" val="1"/>
+                                        <get-val-0-2 comment="false" id="1" x="0" y="0"/>
+                                    </keystate>
+                                </if>
+                                <if comment="false" x="0" y="0">
+                                    <group eventID="2" id="-1">
+                                        <add-list comment="false" x="0" y="0">
+                                            <get-val-0-1 comment="false" id="0" x="0" y="0"/>
+                                            <int id="1" val="D"/>
+                                        </add-list>
+                                        <set-val-0-6 comment="false" x="0" y="0">
+                                            <true comment="false" id="0" x="0" y="0"/>
+                                        </set-val-0-6>
+                                    </group>
+                                    <keystate comment="false" id="0" x="0" y="0">
+                                        <int id="0" val="1"/>
+                                        <get-val-0-3 comment="false" id="1" x="0" y="0"/>
+                                    </keystate>
+                                </if>
+                                <if comment="false" x="0" y="0">
+                                    <group eventID="2" id="-1">
+                                        <add-list comment="false" x="0" y="0">
+                                            <get-val-0-1 comment="false" id="0" x="0" y="0"/>
+                                            <int id="1" val="L"/>
+                                        </add-list>
+                                        <set-val-0-6 comment="false" x="0" y="0">
+                                            <true comment="false" id="0" x="0" y="0"/>
+                                        </set-val-0-6>
+                                    </group>
+                                    <keystate comment="false" id="0" x="0" y="0">
+                                        <int id="0" val="1"/>
+                                        <get-val-0-4 comment="false" id="1" x="0" y="0"/>
+                                    </keystate>
+                                </if>
+                                <if comment="false" x="0" y="0">
+                                    <group eventID="2" id="-1">
+                                        <add-list comment="false" x="0" y="0">
+                                            <get-val-0-1 comment="false" id="0" x="0" y="0"/>
+                                            <int id="1" val="R"/>
+                                        </add-list>
+                                        <set-val-0-6 comment="false" x="0" y="0">
+                                            <true comment="false" id="0" x="0" y="0"/>
+                                        </set-val-0-6>
+                                    </group>
+                                    <keystate comment="false" id="0" x="0" y="0">
+                                        <int id="0" val="1"/>
+                                        <get-val-0-5 comment="false" id="1" x="0" y="0"/>
+                                    </keystate>
+                                </if>
+                            </group>
+                            <not comment="false" id="0" x="0" y="0">
+                                <get-val-0-6 comment="false" id="0" x="0" y="0"/>
+                            </not>
+                        </if>
+                        <else comment="false" x="0" y="0">
+                            <group eventID="2" id="-1">
+                                <set-val-0-7 comment="false" x="0" y="0">
+                                    <false comment="false" id="0" x="0" y="0"/>
+                                </set-val-0-7>
+                                <set-val-0-6 comment="false" x="0" y="0">
+                                    <true comment="false" id="0" x="0" y="0"/>
+                                </set-val-0-6>
+                            </group>
+                        </else>
+                    </group>
+                    <get-val-0-7 comment="false" id="0" x="0" y="0"/>
+                </if>
+            </group>
+        </step>
+    </group>
+</groups>
