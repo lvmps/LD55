@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pack>
+    <snippet
+        attachedevent="false"
+        class="scripts.Design_0_0_8WayMovementBehaviour"
+        classname="scripts.Design_0_0_8WayMovementBehaviour"
+        desc=""
+        description=""
+        design="true"
+        drawOrder="0"
+        id="0"
+        name="8 Way Movement Behaviour"
+        oid="-1"
+        package="scripts"
+        shared="false"
+        type="actor">
+        <actor
+            default="thisactor"
+            defaultValue="thisactor"
+            desc=""
+            dropdown=""
+            fullname="Actor"
+            hidden="true"
+            id="2147483647"
+            name="actor"
+            order="2147483647"/>
+        <blocks/>
+        <events/>
+    </snippet>
+    <snippet
+        attachedevent="false"
+        class="scripts.Design_1_1_TypingInputBehaviour"
+        classname="scripts.Design_1_1_TypingInputBehaviour"
+        desc=""
+        description=""
+        design="true"
+        drawOrder="0"
+        id="1"
+        name="Typing Input Behaviour"
+        oid="-1"
+        package="scripts"
+        shared="false"
+        type="scene">
+        <blocks/>
+        <events/>
+    </snippet>
+</pack>
