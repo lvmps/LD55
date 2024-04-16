@@ -6,6 +6,31 @@
                 <set-val-0-1 comment="false" x="0" y="0">
                     <create-list comment="false" id="0" x="0" y="0"/>
                 </set-val-0-1>
+                <set-val-0-14 comment="false" x="0" y="0">
+                    <int id="0" val="1"/>
+                </set-val-0-14>
+                <set-val-0-12 comment="false" x="0" y="0">
+                    <int id="0" val="1"/>
+                </set-val-0-12>
+                <set-val-0-13 comment="false" x="0" y="0">
+                    <int id="0" val="1"/>
+                </set-val-0-13>
+                <set-val-0-16 comment="false" x="0" y="0">
+                    <int id="0" val="1"/>
+                </set-val-0-16>
+                <scaleTo comment="false" x="0" y="0">
+                    <ACTOR eid="this" id="0"/>
+                    <int id="1" val="50"/>
+                    <int id="2" val="50"/>
+                    <int id="3" val="0"/>
+                    <int id="4" val="0"/>
+                </scaleTo>
+                <set-val-0-17 comment="false" x="0" y="0">
+                    <int id="0" val="0"/>
+                </set-val-0-17>
+                <set-val-0-18 comment="false" x="0" y="0">
+                    <int id="0" val="0"/>
+                </set-val-0-18>
             </group>
         </init>
     </group>
@@ -94,6 +119,49 @@
                     </group>
                     <get-val-0-7 comment="false" id="0" x="0" y="0"/>
                 </if>
+            </group>
+        </step>
+    </group>
+    <group eventID="3" id="0">
+        <step comment="false" x="30" y="28">
+            <group eventID="3" id="-1">
+                <set-xy comment="false" x="0" y="0">
+                    <ACTOR eid="this" id="0"/>
+                    <int id="1" val="2"/>
+                    <plus comment="false" id="2" x="0" y="0">
+                        <get-xy comment="false" id="0" x="0" y="0">
+                            <ACTOR eid="this" id="0"/>
+                            <int id="1" val="2"/>
+                        </get-xy>
+                        <get-val-0-10 comment="false" id="1" x="0" y="0"/>
+                    </plus>
+                </set-xy>
+            </group>
+        </step>
+    </group>
+    <group eventID="3" id="1">
+        <code-long comment="false" x="151" y="360">
+            <int id="0" val="// Check for left or right key press without stop key&#10;if (!(isKeyDown(&amp;quot;left&amp;quot;) &amp;amp;&amp;amp; isKeyDown(&amp;quot;right&amp;quot;)) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    if (isKeyDown(&amp;quot;left&amp;quot;)) {&#10;        _directionX = -_1;&#10;    } else if (isKeyDown(&amp;quot;right&amp;quot;)) {&#10;        _directionX = _1;&#10;    } else {&#10;        _directionX = 0;&#10;    }&#10;} else {&#10;    _directionX = 0;&#10;}&#10;&#10;// Check for up or down key press without stop key&#10;if (!(isKeyDown(&amp;quot;up&amp;quot;) &amp;amp;&amp;amp; isKeyDown(&amp;quot;down&amp;quot;)) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    if (isKeyDown(&amp;quot;up&amp;quot;)) {&#10;        _directionY = -_1;&#10;    } else if (isKeyDown(&amp;quot;down&amp;quot;)) {&#10;        _directionY = _1;&#10;    } else {&#10;        _directionY = 0;&#10;    }&#10;} else {&#10;    _directionY = 0;&#10;}&#10;&#10;// Calculate positions&#10;_positionX = _directionX * _velocityX;&#10;_positionY = _directionY * _velocityY;&#10;&#10;// Normalised diagonal movement&#10;if (!(_directionX == 0) &amp;amp;&amp;amp; !(_directionY == 0)) {&#10;    actor.setXCenter(actor.getXCenter() + (_positionX * 0.70710678118));&#10;    actor.setYCenter(actor.getYCenter() + (_positionY * 0.70710678118));&#10;} else {&#10;    actor.setXCenter(actor.getXCenter() + _positionX);&#10;    actor.setYCenter(actor.getYCenter() + _positionY);&#10;}&#10;"/>
+        </code-long>
+        <code-long comment="false" x="0" y="0">
+            <int id="0" val="// Check horizontal movement&#10;if (isKeyDown(&amp;quot;left&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(&amp;quot;right&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    _directionX = -(_1);&#10;} else if (isKeyDown(&amp;quot;right&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(&amp;quot;left&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    _directionX = _1;&#10;} else {&#10;    _directionX = 0;&#10;}&#10;&#10;// Check vertical movement&#10;if (isKeyDown(&amp;quot;up&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(&amp;quot;down&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    _directionY = -(_1);&#10;} else if (isKeyDown(&amp;quot;down&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(&amp;quot;up&amp;quot;) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    _directionY = _1;&#10;} else {&#10;    _directionY = 0;&#10;}&#10;&#10;// Normalize diagonal movement&#10;if (!(_directionX == 0) &amp;amp;&amp;amp; !(_directionY == 0)) {&#10;    _directionX *= 0.70710678118;&#10;    _directionY *= 0.70710678118;&#10;}&#10;&#10;// Set position based on direction and velocity&#10;_positionX = (_directionX * _velocityX);&#10;_positionY = (_directionY * _velocityY);&#10;&#10;// Update actor position&#10;actor.setXCenter((actor.getXCenter() + _positionX));&#10;actor.setYCenter((actor.getYCenter() + _positionY));&#10;&#10;"/>
+        </code-long>
+    </group>
+    <group eventID="4" id="0">
+        <draw comment="false" x="15" y="15">
+            <group eventID="4" id="-1">
+                <code-long comment="false" x="0" y="0">
+                    <int id="0" val="g.translateToScreen();&#10;g.drawString(&amp;quot;&amp;quot; + _positionX, 8, 8);&#10;g.drawString(&amp;quot;&amp;quot; + _positionY, 8, 24);"/>
+                </code-long>
+            </group>
+        </draw>
+    </group>
+    <group eventID="5" id="0">
+        <step comment="false" x="15" y="15">
+            <group eventID="5" id="-1">
+                <code-long comment="false" x="0" y="0">
+                    <int id="0" val="// Check for left or right key press without stop key&#10;if (!(isKeyDown(&amp;quot;left&amp;quot;) &amp;amp;&amp;amp; isKeyDown(&amp;quot;right&amp;quot;)) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    if (isKeyDown(&amp;quot;left&amp;quot;)) {&#10;        _directionX = -_1;&#10;    } else if (isKeyDown(&amp;quot;right&amp;quot;)) {&#10;        _directionX = _1;&#10;    } else {&#10;        _directionX = 0;&#10;    }&#10;} else {&#10;    _directionX = 0;&#10;}&#10;&#10;// Check for up or down key press without stop key&#10;if (!(isKeyDown(&amp;quot;up&amp;quot;) &amp;amp;&amp;amp; isKeyDown(&amp;quot;down&amp;quot;)) &amp;amp;&amp;amp; !isKeyDown(_stop)) {&#10;    if (isKeyDown(&amp;quot;up&amp;quot;)) {&#10;        _directionY = -_1;&#10;    } else if (isKeyDown(&amp;quot;down&amp;quot;)) {&#10;        _directionY = _1;&#10;    } else {&#10;        _directionY = 0;&#10;    }&#10;} else {&#10;    _directionY = 0;&#10;}&#10;&#10;// Calculate positions&#10;_positionX = _directionX * _velocityX;&#10;_positionY = _directionY * _velocityY;&#10;&#10;// Normalised diagonal movement&#10;if (!(_directionX == 0) &amp;amp;&amp;amp; !(_directionY == 0)) {&#10;    actor.setXCenter(actor.getXCenter() + (_positionX * 0.70710678118));&#10;    actor.setYCenter(actor.getYCenter() + (_positionY * 0.70710678118));&#10;} else {&#10;    actor.setXCenter(actor.getXCenter() + _positionX);&#10;    actor.setYCenter(actor.getYCenter() + _positionY);&#10;}&#10;"/>
+                </code-long>
             </group>
         </step>
     </group>

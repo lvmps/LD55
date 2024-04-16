@@ -88,7 +88,12 @@
         p12pwd=""
         prov-adhoc=""
         prov-store=""/>
-    <exts/>
+    <exts>
+        <e enabled="true" id="Stencyl-Extended-Math-master" version="1.0.0"/>
+        <e enabled="true" id="Workflow utilities" version="1.0.0"/>
+        <e enabled="true" id="external-data" version="2.0.0"/>
+        <e enabled="true" id="net.corymartin.spacers" version="1.0.0"/>
+    </exts>
     <bundles>
         <bundle id="com.yourcompany.gamename" internalVersion="1" name="My Game" store="App Store" version="1.0.0"/>
         <bundle id="com.yourcompany.gamename" internalVersion="1" name="My Game" store="Google Play" version="1.0.0"/>
@@ -200,7 +205,7 @@
             desc=""
             dirty="true"
             id="0"
-            members=""
+            members="1"
             name="Main Atlas"
             pvr="false"
             resize="0"

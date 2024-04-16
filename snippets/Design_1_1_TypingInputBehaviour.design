@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <groups format="1">
-    <group eventID="1" id="0">
-        <init comment="false" x="15" y="15">
-            <group eventID="1" id="-1"/>
-        </init>
-    </group>
     <group eventID="2" id="0">
         <event-key-any-press-release comment="false" x="15" y="15">
-            <group eventID="2" id="-1"/>
+            <group eventID="2" id="-1">
+                <set-val-1-2 comment="false" x="0" y="0">
+                    <custom-0 comment="false" id="0" x="0" y="0">
+                        <key-code comment="false" id="0" x="0" y="0"/>
+                        <key-char comment="false" id="1" x="0" y="0"/>
+                    </custom-0>
+                </set-val-1-2>
+                <if comment="false" x="0" y="0">
+                    <group eventID="2" id="-1">
+                        <set-val-1-3 comment="false" x="0" y="0">
+                            <str-combine comment="false" id="0" x="0" y="0">
+                                <get-val-1-3 comment="false" id="0" x="0" y="0"/>
+                                <get-val-1-2 comment="false" id="1" x="0" y="0"/>
+                            </str-combine>
+                        </set-val-1-3>
+                    </group>
+                    <less comment="false" id="0" x="0" y="0">
+                        <str-length comment="false" id="0" x="0" y="0">
+                            <get-val-1-3 comment="false" id="0" x="0" y="0"/>
+                        </str-length>
+                        <int id="1" val="5"/>
+                    </less>
+                </if>
+            </group>
             <int id="0" val="0"/>
         </event-key-any-press-release>
     </group>
@@ -19,5 +37,57 @@
                 </code-long>
             </group>
         </receiver-1-0>
+    </group>
+    <group eventID="4" id="0">
+        <draw comment="false" x="15" y="15">
+            <group eventID="4" id="-1">
+                <code-long comment="false" x="0" y="0">
+                    <int id="0" val="g.drawString(&amp;quot;&amp;quot; + _character, 8, 56);&#10;//g.drawString(&amp;quot;&amp;quot; + _word, 8, 72);&#10;/*  */&#10;&#9;if(!((_word) == (&amp;quot;&amp;quot;)))&#10;&#9;{&#10;&#9;&#9;g.drawString(&amp;quot;&amp;quot; + _word, 8, 72);&#10;&#9;}&#10;&#9;else&#10;&#9;{&#10;&#9;&#9;g.drawString(&amp;quot;&amp;quot; + &amp;quot;empty&amp;quot;, 8, 72);&#10;&#9;}&#10;//---"/>
+                </code-long>
+                <code-long comment="false" x="0" y="0">
+                    <int id="0" val="// Convert elapsedTime to a string before drawing&#10;var elapsedTimeString:String = Std.string(Engine.elapsedTime);&#10;// Draw the string representation of elapsedTime&#10;g.drawString(elapsedTimeString, getScreenX() + (g.font.getTextWidth(&amp;quot;elapsedTimeString&amp;quot;)/Engine.SCALE), 72);&#10;&#10;"/>
+                </code-long>
+            </group>
+        </draw>
+    </group>
+    <group eventID="4" id="1">
+        <code-long comment="false" x="48" y="634">
+            <int id="0" val="Word = A, P, P, L, E // current guess&#10;Answer = APPLE //&#10;Guess List = Current &amp;quot;Word&amp;quot;&#10;Valid List = All valid guesses&#10;Answers List = All valid words &#10;&#10;"/>
+        </code-long>
+    </group>
+    <group eventID="4" id="2">
+        <draw-text comment="false" x="392" y="578">
+            <code-short comment="false" id="0" x="0" y="0">
+                <int id="0" val="Engine.elapsedTime"/>
+            </code-short>
+            <int id="1" val="208"/>
+            <int id="2" val="8"/>
+        </draw-text>
+    </group>
+    <group eventID="4" id="3">
+        <set-val-1-6 comment="false" x="528" y="264">
+            <create-list comment="false" id="0" x="0" y="0"/>
+        </set-val-1-6>
+    </group>
+    <group eventID="4" id="-1">
+        <screen-xy comment="false" x="536" y="107">
+            <int id="0" val="0"/>
+        </screen-xy>
+    </group>
+    <group eventID="5" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="5" id="-1"/>
+        </init>
+    </group>
+    <group eventID="5" id="1">
+        <add-list comment="false" x="438" y="296">
+            <get-val-1-6 comment="false" id="0" x="0" y="0"/>
+            <int id="1" val=""/>
+        </add-list>
+    </group>
+    <group eventID="5" id="-1">
+        <copy-list comment="false" x="501" y="41">
+            <get-val-1-6 comment="false" id="0" x="0" y="0"/>
+        </copy-list>
     </group>
 </groups>

@@ -1,2 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<groups format="1"/>
+<groups format="1">
+    <group eventID="1" id="0">
+        <init comment="false" x="15" y="15">
+            <group eventID="1" id="-1">
+                <camera-move comment="false" x="0" y="0">
+                    <div comment="false" id="0" x="0" y="0">
+                        <scene-wh comment="false" id="0" x="0" y="0">
+                            <int id="0" val="0"/>
+                        </scene-wh>
+                        <int id="1" val="2"/>
+                    </div>
+                    <div comment="false" id="1" x="0" y="0">
+                        <scene-wh comment="false" id="0" x="0" y="0">
+                            <int id="0" val="1"/>
+                        </scene-wh>
+                        <int id="1" val="2"/>
+                    </div>
+                </camera-move>
+                <dolater comment="false" x="0" y="0">
+                    <group eventID="1" id="-1">
+                        <create-actor3 comment="false" x="0" y="0">
+                            <actortype eid="1" id="0"/>
+                            <minus comment="false" id="1" x="0" y="0">
+                                <screen-xy comment="false" id="0" x="0" y="0">
+                                    <int id="0" val="2"/>
+                                </screen-xy>
+                                <int id="1" val="36"/>
+                            </minus>
+                            <minus comment="false" id="2" x="0" y="0">
+                                <screen-xy comment="false" id="0" x="0" y="0">
+                                    <int id="0" val="3"/>
+                                </screen-xy>
+                                <int id="1" val="36"/>
+                            </minus>
+                            <int id="3" val="0"/>
+                        </create-actor3>
+                    </group>
+                    <int id="0" val="1"/>
+                </dolater>
+            </group>
+        </init>
+    </group>
+</groups>

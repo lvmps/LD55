@@ -40,7 +40,7 @@
             desc=""
             dropdown=""
             fullname="Up"
-            hidden="true"
+            hidden="false"
             id="2"
             name="_Up"
             order="2"/>
@@ -50,7 +50,7 @@
             desc=""
             dropdown=""
             fullname="Down"
-            hidden="true"
+            hidden="false"
             id="3"
             name="_Down"
             order="3"/>
@@ -60,7 +60,7 @@
             desc=""
             dropdown=""
             fullname="Left"
-            hidden="true"
+            hidden="false"
             id="4"
             name="_Left"
             order="4"/>
@@ -70,7 +70,7 @@
             desc=""
             dropdown=""
             fullname="Right"
-            hidden="true"
+            hidden="false"
             id="5"
             name="_Right"
             order="5"/>
@@ -94,6 +94,116 @@
             id="7"
             name="_CanMove"
             order="7"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="directionX"
+            hidden="true"
+            id="8"
+            name="_directionX"
+            order="8"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="directionY"
+            hidden="true"
+            id="9"
+            name="_directionY"
+            order="9"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="positionX"
+            hidden="true"
+            id="10"
+            name="_positionX"
+            order="10"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="positionY"
+            hidden="true"
+            id="11"
+            name="_positionY"
+            order="11"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="velocityX"
+            hidden="true"
+            id="12"
+            name="_velocityX"
+            order="12"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="velocityY"
+            hidden="true"
+            id="13"
+            name="_velocityY"
+            order="13"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="1"
+            hidden="true"
+            id="14"
+            name="_1"
+            order="14"/>
+        <control
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="stop"
+            hidden="false"
+            id="15"
+            name="_stop"
+            order="15"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="velocity"
+            hidden="true"
+            id="16"
+            name="_velocity"
+            order="16"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="deltaX"
+            hidden="false"
+            id="17"
+            name="_deltaX"
+            order="17"/>
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="deltaY"
+            hidden="false"
+            id="18"
+            name="_deltaY"
+            order="18"/>
         <blocks/>
         <events>
             <event
@@ -104,11 +214,32 @@
                 order="1"
                 repeats="true"/>
             <event
-                displayName="Updating"
-                enabled="true"
+                displayName="Check Inputs"
+                enabled="false"
                 id="2"
                 name="step"
+                order="3"
+                repeats="true"/>
+            <event
+                displayName="Updating"
+                enabled="false"
+                id="3"
+                name="step"
+                order="4"
+                repeats="true"/>
+            <event
+                displayName="Drawing"
+                enabled="true"
+                id="4"
+                name="draw"
                 order="2"
+                repeats="true"/>
+            <event
+                displayName="Updating"
+                enabled="true"
+                id="5"
+                name="step"
+                order="5"
                 repeats="true"/>
         </events>
     </snippet>
@@ -126,17 +257,110 @@
         package="scripts"
         shared="false"
         type="scene">
+        <number
+            default="0.0"
+            defaultValue="0.0"
+            desc=""
+            dropdown=""
+            fullname="keycode"
+            hidden="true"
+            id="1"
+            name="_keycode"
+            order="0"/>
+        <text
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="character"
+            hidden="true"
+            id="2"
+            name="_character"
+            order="1"/>
+        <text
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="word"
+            hidden="true"
+            id="3"
+            name="_word"
+            order="2"/>
+        <list
+            default="list"
+            defaultValue="list"
+            desc=""
+            dropdown=""
+            fullname="Guess List"
+            hidden="false"
+            id="4"
+            name="_GuessList"
+            order="3"/>
+        <list
+            default="list"
+            defaultValue="list"
+            desc=""
+            dropdown=""
+            fullname="Valid List"
+            hidden="false"
+            id="5"
+            name="_ValidList"
+            order="4"/>
+        <list
+            default="list"
+            defaultValue="list"
+            desc=""
+            dropdown=""
+            fullname="Answer List"
+            hidden="false"
+            id="6"
+            name="_AnswerList"
+            order="5"/>
+        <text
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="guess"
+            hidden="true"
+            id="7"
+            name="_guess"
+            order="6"/>
+        <text
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="answer"
+            hidden="true"
+            id="8"
+            name="_answer"
+            order="7"/>
+        <text
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="answer-list-txt"
+            hidden="true"
+            id="9"
+            name="_answerlisttxt"
+            order="8"/>
+        <text
+            default=""
+            defaultValue=""
+            desc=""
+            dropdown=""
+            fullname="valid-list-txt"
+            hidden="true"
+            id="10"
+            name="_validlisttxt"
+            order="9"/>
         <blocks>
             <receiver blockID="0" id="1"/>
         </blocks>
         <events>
-            <event
-                displayName="Created"
-                enabled="true"
-                id="1"
-                name="init"
-                order="1"
-                repeats="true"/>
             <event
                 displayName="Any Key"
                 enabled="true"
@@ -149,6 +373,20 @@
                 enabled="true"
                 id="3"
                 name="event-custom-block"
+                order="7"
+                repeats="true"/>
+            <event
+                displayName="Drawing"
+                enabled="true"
+                id="4"
+                name="draw"
+                order="5"
+                repeats="true"/>
+            <event
+                displayName="Created"
+                enabled="true"
+                id="5"
+                name="init"
                 order="3"
                 repeats="true"/>
         </events>
@@ -169,6 +407,57 @@
         shared="false"
         type="scene">
         <blocks/>
+        <events>
+            <event
+                displayName="Created"
+                enabled="true"
+                id="1"
+                name="init"
+                order="1"
+                repeats="true"/>
+        </events>
+    </snippet>
+    <snippet
+        actorid="1"
+        attachedevent="true"
+        class="scripts.ActorEvents_1"
+        classname="scripts.ActorEvents_1"
+        desc="Actor Specific Events"
+        description="Actor Specific Events"
+        design="true"
+        drawOrder="0"
+        id="3"
+        name="ActorEvents_1"
+        oid="-1"
+        package="scripts."
+        shared="false"
+        type="actor">
+        <blocks/>
         <events/>
+    </snippet>
+    <snippet
+        attachedevent="false"
+        class="scripts.Design_4_4_SpiralBehaviour"
+        classname="scripts.Design_4_4_SpiralBehaviour"
+        desc=""
+        description=""
+        design="true"
+        drawOrder="0"
+        id="4"
+        name="Spiral Behaviour"
+        oid="-1"
+        package="scripts"
+        shared="false"
+        type="scene">
+        <blocks/>
+        <events>
+            <event
+                displayName="Created"
+                enabled="true"
+                id="1"
+                name="init"
+                order="1"
+                repeats="true"/>
+        </events>
     </snippet>
 </pack>
