@@ -1,0 +1,152 @@
+/*
+    Stencyl exclusively uses the Haxe programming language. 
+    Haxe is similar to ActionScript and JavaScript.
+    
+    Want to use native code or make something reusable? Use the Extensions Framework instead.
+    https://www.stencyl.com/help/view/engine-extensions/
+    
+    Learn more about Haxe and our APIs
+    https://www.stencyl.com/help/view/haxe/
+*/
+
+package scripts;
+
+
+//==========================================================
+// Imports
+//==========================================================
+
+import com.stencyl.graphics.G;
+
+import com.stencyl.behavior.Script;
+import com.stencyl.behavior.Script.*;
+import com.stencyl.behavior.ActorScript;
+import com.stencyl.behavior.SceneScript;
+import com.stencyl.behavior.TimedTask;
+
+import com.stencyl.models.Actor;
+import com.stencyl.models.GameModel;
+import com.stencyl.models.actor.Animation;
+import com.stencyl.models.actor.ActorType;
+import com.stencyl.models.actor.Collision;
+import com.stencyl.models.actor.Group;
+import com.stencyl.models.Scene;
+import com.stencyl.models.Sound;
+import com.stencyl.models.Region;
+import com.stencyl.models.Font;
+
+import com.stencyl.Engine;
+import com.stencyl.Input;
+import com.stencyl.utils.motion.*;
+import com.stencyl.utils.Utils;
+
+import nme.ui.Mouse;
+import nme.display.Graphics;
+
+class BezierCurvesSceneBehaviour extends SceneScript
+{
+	//Expose your attributes like this:
+	//@:attribute("id='1' name='Display Name' desc='An Attribute'")
+	//public var attributeName:String;
+	
+	//Need further help? See: https://www.stencyl.com/help/view/code-mode/
+
+	// var xList:Array<Dynamic>;
+	// var yList:Array<Dynamic>;
+
+	// create lists to hold x and y values
+	var xList:Array<Float>;
+	var yList:Array<Float>;
+	
+	override public function init()
+	{
+		xList = []; // Initialize xList as an empty array
+		yList = []; // Initialize yList as an empty array
+	}
+	
+	public inline function update(elapsedTime:Float)
+	{
+		// add mouse x y values to lists
+		if(isMousePressed()) {
+			xList.push(getMouseX());
+			yList.push(getMouseY());
+		}
+	}
+	
+	public inline function draw(g:G)
+	{
+		// draw number of points in lists
+		g.drawString("" + xList.length, getMouseX(), getMouseY());
+		// draw the x y values of the last index in lists
+		g.drawString("" + xList[xList.length - 1], 8, 8);
+		g.drawString("" + yList[yList.length - 1], 8, 24);
+
+		// check if there are points recorded
+		if(xList.length > 0 && yList.length > 0){
+			for(i in 0...xList.length){
+				g.fillColor = Utils.convertColor(Utils.getColorRGB(255, 153, 153));
+				g.fillRect(xList[i], yList[i], 8, 8);
+				g.drawString("" + xList[i], xList[i], yList[i]);
+				g.drawString("" + yList[i], xList[i], yList[i] + 16);
+			}
+		}
+
+		if(xList.length % 3 == 2 && yList.length % 3 == 2){
+			g.strokeColor = Utils.getColorRGB(0, 0, 0);
+			g.strokeSize = 4;
+			g.startGraphics();
+			g.graphics.moveTo(xList[xList.length - 2] * g.scaleX, yList[yList.length - 2] * g.scaleY);
+			g.graphics.curveTo(getMouseX() * g.scaleX, getMouseY() * g.scaleY, xList[xList.length - 1] * g.scaleX, yList[yList.length - 1] * g.scaleY);
+			g.endGraphics();
+		}
+
+		if(xList.length >= 3){
+			for(i in 0...Math.floor(xList.length / 3)){
+				var k = i * 3;
+				g.strokeColor = Utils.getColorRGB(0, 0, 0);
+				g.strokeSize = 2;
+				g.startGraphics();
+				g.graphics.moveTo(xList[k] * g.scaleX, yList[k] * g.scaleY);
+				g.graphics.curveTo(xList[k+ 2] * g.scaleX, yList[k + 2] * g.scaleY,
+							xList[k + 1] * g.scaleX, yList[k + 1] * g.scaleY);
+				g.endGraphics();
+
+				// draw lines
+				g.strokeColor = Utils.getColorRGB(155, 155, 155);
+				g.strokeSize = 1;
+				g.drawLine(xList[k], yList[k], xList[k + 2], yList[k + 2]);
+				g.drawLine(xList[k + 1], yList[k + 1], xList[k + 2], yList[k + 2]);
+		}
+	}
+		
+	}
+	
+	
+	//==========================================================
+	// Don't edit below unless you know what you're doing
+	//==========================================================
+	
+	public function new(dummy:Int, dummy2:Engine)
+	{
+		super();	
+		
+		addWhenUpdatedListener(null, onUpdate);
+		addWhenDrawingListener(null, onDraw);
+	}
+	
+	public function onUpdate(elapsedTime:Float, list:Array<Dynamic>)
+	{
+		if(wrapper.enabled)
+		{
+			update(elapsedTime);
+		}
+	}
+	
+	public function onDraw(g:G, x:Float, y:Float, list:Array<Dynamic>)
+	{
+		if(wrapper.enabled)
+		{
+			draw(g);
+		}
+	}
+}
